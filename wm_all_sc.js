@@ -12,19 +12,17 @@
   })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
     environment: 'use1',
     deploymentId: '5d256a7b-5aa6-4723-aec2-fc2d51b87d37'
-  }),
+  });
+
+function setupWebMessaging(demoer_name, vertical) {
+
     Genesys("command", "Database.set", {
         messaging: {
             customAttributes: {
-                ACD_Skill: "Demo - Brett",
-                //Demo_Vertical: "Financial", // Maps to Genesys Architect Inbound Message Flow "Demo - All (sc)" Case 1
-                //Demo_Vertical: "Healthcare", // Maps to Genesys Architect Inbound Message Flow "Demo - All (sc)" Case 2
-                //Demo_Vertical: "Other?", // Not yet implemented
-                //Demo_Vertical: "Insurance",
-                //Demo_Vertical: "Transportation",
-                //Demo_Vertical: "Consumer Goods",
-                Demo_Vertical: "Public Health",
+                ACD_Skill: `Demo - $(demoer_name)`,
+                Demo_Vertical: vertical,
                 External_Customer_Email: "charles.finley@acmecustomer.com"
             }
         }
    });
+}
