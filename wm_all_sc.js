@@ -1,5 +1,3 @@
-// Hello world 
-
 (window.localStorage.removeItem(['_5d256a7b-5aa6-4723-aec2-fc2d51b87d37:gcmcsessionActive']),
   window.localStorage.removeItem(['_5d256a7b-5aa6-4723-aec2-fc2d51b87d37:gcmcopn']),
    window.localStorage.removeItem('_actmu'),
@@ -28,3 +26,12 @@ function setupWebMessaging(demoer_name, vertical) {
         }
    });
 }
+window.addEventListener("load", function () {
+  
+    var chatButton = document.querySelector('.rcw-launcher')
+    if (null != chatButton) {
+       console.log("Removing Webchat ");
+       chatButton.remove()
+    }
+});
+
