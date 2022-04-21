@@ -19,7 +19,7 @@ function setupWebMessaging(demoer_name, vertical) {
     Genesys("command", "Database.set", {
         messaging: {
             customAttributes: {
-                ACD_Skill: `Demo - $(demoer_name)`,
+                ACD_Skill: 'Demo - ' + demoer_name,
                 Demo_Vertical: vertical,
                 External_Customer_Email: "charles.finley@acmecustomer.com"
             }
